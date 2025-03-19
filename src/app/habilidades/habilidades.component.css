@@ -1,0 +1,30 @@
+:host {
+    display: block;
+    padding: 1rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  
+  p-panel {
+    margin-bottom: 1rem;
+  }
+
+  .proyectos-container ::ng-deep .p-card {
+    font-weight: bold;
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    overflow: hidden; /* Oculta el exceso de la línea animada */
+    box-shadow: 0 4px 8px var(--p-primary-color) /* Sombra */
+  }
+
+  .contendor{
+    box-shadow: 0 4px 8px var(--p-primary-color) /* Sombra */
+  }
+  

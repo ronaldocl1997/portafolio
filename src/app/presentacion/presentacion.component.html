@@ -1,0 +1,56 @@
+<div class="grid">
+  <!-- Breadcrumb -->
+  <div class="col-12">
+    <div class="text-center p-3">
+      <p-breadcrumb class="max-w-full" [model]="items" [home]="home" [@fadeIn] />
+    </div>
+  </div>
+
+  <!-- Nombre y título -->
+  <div class="col-12 text-center p-4">
+    <h1 class="text-primary font-bold p-mb-2" [ngStyle]="{ fontSize: '3.5rem', fontWeight: '900', lineHeight: '1.1', letterSpacing: '-0.05em' }" [@fadeIn]>
+      Ronaldo Cuevas Lara
+    </h1>
+    <div 
+      class="p-mb-3" 
+      role="separator" 
+      [ngStyle]="{ width: '120px', height: '4px', backgroundColor: '#007ad9', margin: '1.5rem auto', borderRadius: '2px' }" 
+      [@fadeIn]
+    ></div>
+    <h2 class="text-700 pb-0" [ngStyle]="{ fontSize: '1.6rem', color: '#4a5568', fontWeight: '400', letterSpacing: '0.02em' }" [@fadeIn]>
+      Ingeniero en Sistemas Computacionales
+    </h2>
+  </div>
+
+  <!-- Descripción -->
+  <div class="col-8 col-offset-2">
+    <div class="text-center p-4">
+      <p class="text-700 p-mb-4" [ngStyle]="{ fontSize: '1.25rem', lineHeight: '1.8', color: '#4a5568', fontWeight: '300' }" [@fadeInUp]>
+        Full Stack Developer con amplia experiencia en el desarrollo e implementación de aplicaciones web y móviles escalables y de alto rendimiento. 
+        Especializado en la creación de APIs robustas y eficientes, así como en el diseño de arquitecturas de sistemas optimizadas utilizando tecnologías como Node.js, Nest.js y Spring Boot en el backend. 
+        En el frontend, cuento con un dominio sólido de Angular y experiencia en el desarrollo de aplicaciones móviles multiplataforma con Ionic.
+      </p>
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="col-12 text-center p-4">
+    <p-button
+      label="Descargar CV"
+      icon="pi pi-download"
+      class="p-button-raised p-button-primary pr-3"
+      (onClick)="descargarCV()"
+      [@fadeInUp]
+      aria-label="Descargar currículum vitae de Ronaldo Cuevas Lara"
+    ></p-button>
+
+    <p-button
+      label="Contáctame"
+      icon="pi pi-whatsapp"
+      class="p-button-raised p-button-success"
+      (onClick)="redirigirWhatsApp()"
+      [@fadeInUp]
+      aria-label="Contactar a Ronaldo Cuevas Lara por WhatsApp"
+    ></p-button>
+  </div>
+</div>

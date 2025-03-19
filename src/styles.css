@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+body {
+    background-attachment: fixed; /* Fija el fondo para que no se desplace con el scroll */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
+  }

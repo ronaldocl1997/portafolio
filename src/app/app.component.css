@@ -1,0 +1,14 @@
+:host ::ng-deep .p-card {
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 1rem; /* Espaciado interno */
+    height: 100%; /* Ocupa el 100% de la altura del contenedor */
+    display: flex; /* Hace que la card sea un contenedor flexible */
+    flex-direction: column; /* Dirección de columna */
+    flex-grow: 1; /* Crece dentro del contenedor */
+    min-height: 0; /* Asegura que pueda expandirse sin problemas */
+    border: 1px solid var(--p-menubar-border-color);
+}
+
+:host ::ng-deep .p-card .p-button {
+    margin-top: 1rem; /* Espacio arriba del botón */
+}

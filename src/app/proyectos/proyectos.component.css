@@ -1,0 +1,67 @@
+.proyectos-container ::ng-deep .p-card {
+  font-weight: bold;
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
+  overflow: hidden; /* Oculta el exceso de la línea animada */
+  box-shadow: 0 4px 8px var(--p-primary-color) /* Sombra */
+}
+
+.proyectos-container ::ng-deep .p-carousel img {
+  width: 100%; /* Hace que la imagen ocupe todo el contenedor */
+  height: 200px; /* Altura fija para todas las imágenes */
+  object-fit: contain; /* Mantiene las proporciones de la imagen */
+  cursor: pointer; /* Hace que el cursor indique que la imagen es clickeable */
+  transition: transform 0.2s ease-in-out;
+}
+
+.proyectos-container ::ng-deep .p-carousel img:hover {
+  transform: scale(1.05); /* Efecto de zoom cuando el mouse pasa sobre la imagen */
+}
+
+.proyectos-container ::ng-deep .p-card .p-card-title {
+  color: var(--p-primary-color); /* Aplica el color primario al título */
+}
+
+.proyectos-container ::ng-deep .p-card-title {
+  color: var(--p-primary-color); /* Color primario */
+}
+
+.proyectos-container ::ng-deep .p-card-subtitle {
+  border-bottom: 1px solid #8ec6eb; /* Línea más delgada */
+  padding-bottom: 5px;
+}
+
+.proyectos-container ::ng-deep .p-card-footer {
+  font-size: 0.875rem; /* Mismo tamaño que text-sm */
+  padding-top: 5px;
+  text-align: center;
+}
+
+/* Quitar fondo gris y bordes del botón */
+.p-carousel-prev-button,
+.p-carousel-next-button {
+  background: transparent !important;  /* Fondo transparente */
+  border: none !important;  /* Sin bordes */
+  box-shadow: none !important;  /* Evita sombras no deseadas */
+  width: 48px; 
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;  /* Espaciado */
+  cursor: pointer;
+}
+
+/* Cambiar color del icono */
+.p-carousel-prev-button i,
+.p-carousel-next-button i {
+  color: var(--primary-color) !important; /* Usa el color primario del tema Aura */
+  font-size: 1.5rem; /* Tamaño del icono */
+}
+
+/* Opcional: Cambiar color al pasar el mouse */
+.p-carousel-prev-button:hover i,
+.p-carousel-next-button:hover i {
+  color: var(--primary-color-dark) !important; /* Un tono más oscuro para resaltar */
+}

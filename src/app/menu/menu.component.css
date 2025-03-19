@@ -1,0 +1,6 @@
+:host ::ng-deep {
+    /* Color de los íconos */
+    --p-menubar-item-icon-color: #95e4d0; /* Color del ícono */
+    --p-menubar-item-icon-focus-color: #315e8a; /* Color del ícono al hacer hover */
+    --p-menubar-item-icon-active-color: #315e8a; /* Color del ícono activo */
+}

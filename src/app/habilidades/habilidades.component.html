@@ -1,0 +1,70 @@
+<p-breadcrumb class="max-w-full" [model]="items" [home]="home"   @slideIn/>
+<div class="grid" @fadeIn>
+    <!-- Columna Frontend -->
+    <div class="col">
+        <div class="text-center p-3 border-round-sm font-bold">
+            <p-fieldset legend="Frontend" [toggleable]="true">
+                <div class="flex flex-column gap-2">
+                    <p-tag value="Angular" severity="danger" icon="pi pi-angular"></p-tag>
+                    <p-tag value="Ionic" severity="success" icon="pi pi-mobile"></p-tag>
+                    <p-tag value="Angular Material" severity="info" icon="pi pi-palette"></p-tag>
+                    <p-tag value="Nebular" severity="warn" icon="pi pi-star"></p-tag>
+                    <p-tag value="PrimeNG" severity="danger" icon="pi pi-prime"></p-tag>
+                    <p-tag value="Bootstrap" severity="secondary" icon="pi pi-palette"></p-tag>
+                </div>
+            </p-fieldset>
+        </div>
+    </div>
+
+    <!-- Columna Backend -->
+    <div class="col">
+        <div class="text-center p-3 border-round-sm font-bold">
+            <p-fieldset legend="Backend" [toggleable]="true">
+                <div class="flex flex-column gap-2">
+                    <p-tag value="Node.js" severity="danger" icon="pi pi-code"></p-tag>
+                    <p-tag value="NestJS" severity="success" icon="pi pi-server"></p-tag>
+                    <p-tag value="Express" severity="info" icon="pi pi-code"></p-tag>
+                    <p-tag value="Spring Boot" severity="warn" icon="pi pi-code"></p-tag>
+                </div>
+            </p-fieldset>
+        </div>
+    </div>
+
+    <!-- Columna Bases de Datos y Herramientas -->
+    <div class="col">
+        <div class="text-center p-3 border-round-sm font-bold">
+            <p-fieldset legend="Bases de Datos y Herramientas" [toggleable]="true">
+                <div class="flex flex-column gap-2">
+                    <p-tag value="MySQL" severity="danger" icon="pi pi-database"></p-tag>
+                    <p-tag value="SQL Server" severity="success" icon="pi pi-database"></p-tag>
+                    <p-tag value="PostgreSQL" severity="info" icon="pi pi-database"></p-tag>
+                    <p-tag value="TypeORM" severity="warn" icon="pi pi-code"></p-tag>
+                    <p-tag value="APIs RESTful" severity="danger" icon="pi pi-globe"></p-tag>
+                    <p-tag value="WebSockets" severity="secondary" icon="pi pi-comments"></p-tag>
+                </div>
+            </p-fieldset>
+        </div>
+    </div>
+    
+</div>
+
+<div class="card" @fadeIn>
+    <div class="grid proyectos-container">
+        <!-- Cards generados dinámicamente -->
+        <div class="col-12 md:col-6 lg:col-4" *ngFor="let item of data">
+            <p-card>
+                <ng-template pTemplate="header">
+                    <img [src]="'assets/' + item.image" [alt]="item.title" class="w-full" />
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <p-button
+                        icon="pi pi-download"
+                        label="Descargar"
+                        (onClick)="downloadPdf(item.pdfUrl, item.pdfName)"
+                        styleClass="p-button-outlined p-button-secondary w-full"
+                    />
+                </ng-template>
+            </p-card>
+        </div>
+    </div>
+</div>

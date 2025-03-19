@@ -1,0 +1,78 @@
+<p-breadcrumb class="max-w-full" [model]="items" [home]="home" [@scaleIn]="1"/>
+<div class="grid proyectos-container">
+  <div class="col-12 md:col-6 lg:col-4" 
+       *ngFor="let proyecto of proyectos; let i = index" 
+       [@scaleIn]="i">
+
+       <p-card>
+        <ng-template #header>
+          <p-carousel [value]="proyecto.imagenes" [numVisible]="1" [numScroll]="1" [responsiveOptions]="responsiveOptions" autoplayInterval="3000">
+            <ng-template let-imagen pTemplate="item">
+              <div class="border border-surface rounded-border">
+                <div class="mb-4">
+                  <div class="relative mx-auto">
+                    <img [src]="imagen" [alt]="proyecto.nombre"
+                        class="w-full rounded border-round cursor-pointer"
+                        (click)="abrirDialogo(imagen)" />
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          
+            <!-- Botón Anterior con corrección -->
+            <ng-template pTemplate="previousicon">
+              <button pButton type="button" class="p-carousel-prev-button" 
+                      aria-label="Imagen anterior">
+                <i class="pi pi-chevron-left"></i>
+              </button>
+            </ng-template>
+            
+            <!-- Botón Siguiente con aria-label -->
+            <ng-template pTemplate="nexticon">
+              <button pButton type="button" class="p-carousel-next-button" 
+                      aria-label="Imagen siguiente">
+                <i class="pi pi-chevron-right"></i>
+              </button>
+            </ng-template>
+          </p-carousel>
+          
+        </ng-template>
+        <ng-template #title> {{proyecto.nombre}}</ng-template>
+        <ng-template #subtitle>
+          <div class="flex flex-column gap-2 text-sm">
+            <div *ngFor="let item of proyecto.descripcion" class="flex align-items-center">
+              <span class="text-green-500 font-bold">✔</span>
+              <span class="ml-2">{{ item }}</span>
+            </div>
+          </div>  
+        </ng-template>
+        <ng-template #footer>
+          <div class="flex flex-column align-items-center text-sm">
+            <p class="font-bold text-lg mb-2">Tecnologías utilizadas:</p>
+            <ul class="list-none p-0 m-0">
+              <li *ngFor="let tecnologia of proyecto.tecnologias" class="mb-1 flex align-items-center">
+                <span class="text-green-500 font-bold">🔹</span>  
+                <span class="ml-2">{{ tecnologia }}</span>
+              </li>
+            </ul>
+          </div>  
+        </ng-template>
+    </p-card>
+  </div>
+</div>
+
+<!-- Dialog para mostrar la imagen en grande -->
+<p-dialog [(visible)]="mostrarDialogo" [modal]="true" [dismissableMask]="true" [style]="{ width: '80vw' }">
+  <ng-template pTemplate="header">
+    <p class="font-bold text-lg">Vista previa de la imagen</p>
+  </ng-template>
+  
+  <div class="flex justify-content-center">
+    <img [src]="imagenSeleccionada" class="max-w-full border-round" style="max-height: 80vh; object-fit: contain;" />
+  </div>
+
+  <ng-template pTemplate="footer">
+    <button pButton type="button" label="Cerrar" icon="pi pi-times" (click)="mostrarDialogo = false" aria-label="Cerrar vista previa de la imagen"></button>
+  </ng-template>
+</p-dialog>
+

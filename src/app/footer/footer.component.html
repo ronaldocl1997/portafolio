@@ -1,0 +1,31 @@
+<p-toolbar [style]="{ 'border-radius': '1rem', 'padding': '1rem 1rem 1rem 1.5rem', 'text-align': 'center' }">
+  <!-- Sección de Redes Sociales (Start) -->
+  <ng-template pTemplate="start">
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/cuevas-lara-ronaldo/" target="_blank" class="mr-3">
+      <i class="pi pi-linkedin text-primary" style="font-size: 1.5rem;"></i>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  </ng-template>
+
+  <!-- Sección de Texto (Center) -->
+  <ng-template pTemplate="center">
+    <p style="margin: 0; color: var(--text-color);">© 2023 Cuevas Lara Ronaldo. Todos los derechos reservados.</p>
+  </ng-template>
+
+  <!-- Sección de Acciones (End) -->
+  <ng-template pTemplate="end">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/522283114787" target="_blank" class="mr-3">
+      <i class="pi pi-whatsapp text-primary" style="font-size: 1.5rem;"></i>
+      <span class="sr-only">WhatsApp</span>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:ronaldocldev@gmail.com" target="_blank">
+      <i class="pi pi-envelope text-primary" style="font-size: 1.5rem;"></i>
+      <span class="sr-only">Enviar correo</span>
+    </a>
+  </ng-template>
+</p-toolbar>
